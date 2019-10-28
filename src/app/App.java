@@ -21,18 +21,26 @@ make while loops in main to make a sort of program menu so you can switch betwee
 
     public static void main(String[] args) {
         
+        String filename = "Data/allOrders.txt";
+        try {
+            ImportFromFile.importPizzaPopularity(filename);
+        } catch (MyException ex) {
+            System.out.println("Det virkede ikke");
+        }
+        
         createDefaultPizzas();
         while (true) {
-        System.out.println("Would you like to make a new order? Y/N: ");
+        System.out.println("Add or remove an order (A/R): ");
         makeOrder = input.next();
-        if("Y".equals(makeOrder)) {
+        if("A".equals(makeOrder)) {
         Order customerOrder = createOrder();
         
         
         System.out.println("Your order is: " + customerOrder.order + "\nThe total price is: " + customerOrder.getOrderTotal() + "\nPickup time: " + customerOrder.getTimeOfPickup());
         
         }
-        else if("N".equals(makeOrder)) {
+        else if("R".equals(makeOrder)) {
+            
             System.out.println();
             break;
             
@@ -92,7 +100,7 @@ make while loops in main to make a sort of program menu so you can switch betwee
         int id = 0;
         
         while (true) {
-            System.out.print("Which order would you like to move(-1 to quit)?: ");
+            System.out.print("Which order would you like to move(-1 to end move)?: ");
             currentOrOld = input.next();
             if ("-1".equals(currentOrOld)) {
                 break;

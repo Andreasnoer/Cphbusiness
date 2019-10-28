@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author andreas
  */
 
-public class statistik {
+public class Statistik {
 
 int[] popArr = new int[15];
     
@@ -24,6 +24,12 @@ int[] popArr = new int[15];
  int twelve = 0;
  int thirteen = 0;
  int fourteem = 0;
+ 
+ 
+ public int computeFrequency(){
+     
+     return 3;
+ }
  
 }
 
